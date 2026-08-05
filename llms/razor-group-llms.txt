@@ -1,0 +1,55 @@
+# Razor Group
+
+> Razor Group (Whele LLC) is a Berlin- and Boston-headquartered consumer goods holding
+> company that acquires, consolidates and scales profitable e-commerce brands selling on
+> Amazon FBA, Walmart, Target, Chewy and other online marketplaces. Founded in 2020, it
+> has raised over $1 billion, employs 450+ people across five offices, and operates more
+> than 40,000 SKUs across brands including GymKeg, POWRX, Tranquil Spa and Porto Vino. In
+> August 2025 Razor merged with Infinite Commerce to form the largest consolidator in the
+> FBA aggregator space.
+
+## API surface
+
+Razor Group publishes **no public API**. There is no developer portal, no API reference,
+no OpenAPI/AsyncAPI/GraphQL contract, no SDK, and no documented webhook surface. The
+company's technology platform — demand forecasting, pricing and advertising across its
+brand portfolio — is operated internally and is not offered to third parties.
+
+Probed and confirmed absent as of 2026-08-05: `/openapi.json`, `/swagger.json`,
+`/api-docs`, `/graphql`, `/llms.txt`, and the whole `/.well-known/` discovery surface
+(`security.txt`, `openid-configuration`, `oauth-authorization-server`, `api-catalog`,
+`ai-plugin.json`, `agent-card.json`, `agent.json`) on every reachable host.
+
+The only API endpoints that exist are private: `api.razor-group.com` resolves in DNS but
+refuses public TCP connections, and the "Ava" operator portal at
+`portal.razor-group.com` / `ava.razor-group.com` fronts an AWS API Gateway that answers
+`MissingAuthenticationToken` (HTTP 403) to anonymous callers.
+
+## Company
+
+- [Razor Group](https://www.razor-group.com/): Corporate site
+- [About us](https://www.razor-group.com/about-us): Company overview
+- [Locations](https://www.razor-group.com/locations): Offices across Europe, North America and Asia
+- [Selling process](https://www.razor-group.com/selling-process): How Razor acquires an e-commerce brand
+- [Partner with us](https://www.razor-group.com/partner-with-us): Partner program
+- [Referral program](https://www.razor-group.com/referral): Brand referral program
+- [Careers](https://www.razor-group.com/careers): Open roles
+- [Contact us](https://www.razor-group.com/contact-us): Contact form
+
+## Resources
+
+- [Blog](https://www.razor-group.com/blog): E-commerce news and insights
+- [Seller stories](https://www.razor-group.com/seller-stories): Case studies from acquired brands
+- [Events](https://www.razor-group.com/events): Events Razor attends
+- [GitHub](https://github.com/razor-group): Razor Group GmbH org — one public repo (`pse-app`), a React/AWS Amplify app; no API specifications
+
+## Legal
+
+- [Privacy Policy](https://www.razor-group.com/privacy-policy)
+- [Imprint](https://www.razor-group.com/imprint)
+
+## API Evangelist artifacts
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/razor-group/refs/heads/main/apis.yml): APIs.json 0.20 profile for Razor Group
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/razor-group/refs/heads/main/security/razor-group-domain-security.yml): Probed TLS/HSTS/DNSSEC/CAA/SPF/DMARC posture
+- [Well-known probe](https://raw.githubusercontent.com/api-evangelist/razor-group/refs/heads/main/well-known/razor-group-well-known.yml): Negative record of the /.well-known/ discovery probe

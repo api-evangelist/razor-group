@@ -1,0 +1,37 @@
+generated: '2026-08-05'
+method: probed
+source: live GET of the /.well-known/ discovery surface on every Razor Group host
+note: >-
+  No document was returned on any host. This file is the negative record of the probe
+  so later rounds do not repeat it blind, and deliberately carries NO WellKnown /
+  SecurityTxt pointer in apis.yml — there is nothing published to point at.
+documents: []
+probes:
+- host: https://www.razor-group.com
+  platform: Webflow (cdn.webflow.com)
+  paths:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /llms.txt, status: 404}
+  - {path: /robots.txt, status: 200, note: empty body, 0 bytes}
+- host: https://portal.razor-group.com
+  platform: Next.js app "Ava" on CloudFront + AWS API Gateway
+  paths:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /llms.txt, status: 404}
+  - {path: /robots.txt, status: 404}
+- host: https://api.razor-group.com
+  resolves: 3.128.26.123
+  unreachable: true
+  note: >-
+    DNS resolves but the host refuses public TCP connections on 443 and 80 (connection
+    timed out) — a network-level firewall, not an auth wall. No /.well-known/ probe was
+    possible.

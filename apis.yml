@@ -1,17 +1,35 @@
 aid: razor-group
 name: Razor Group
-description: 'Razor Group is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Razor Group (Whele LLC) is a Berlin- and Boston-headquartered consumer
+  goods holding company that acquires, consolidates and scales profitable e-commerce
+  brands selling on Amazon FBA, Walmart, Target, Chewy and other online marketplaces.
+  Founded in 2020, the company has raised over $1 billion, employs 450+ people across
+  five offices in Europe, North America and Asia, and operates more than 40,000 SKUs
+  across brands including GymKeg, POWRX, Tranquil Spa and Porto Vino. In August 2025
+  Razor merged with Infinite Commerce to form the largest consolidator in the FBA
+  aggregator space, operating a unified internal technology platform for demand
+  forecasting, pricing and advertising. Razor Group is a buyer and operator of
+  physical consumer products, not a software vendor: it publishes no public API, SDK,
+  webhook surface or developer portal.'
 url: https://raw.githubusercontent.com/api-evangelist/razor-group/refs/heads/main/apis.yml
+image: https://cdn.prod.website-files.com/659bd12259ec13f287424e42/659bd12259ec13f28742502c_razor%20logo-blu-01.svg
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment-pass
 specificationVersion: '0.20'
 created: '2026-08-05'
 modified: '2026-08-05'
 tags:
 - Company
+- E-Commerce
+- Consumer Goods
+- Marketplace
+- Retail
+- Amazon FBA
+- Aggregator
+- Brand Acquisition
+- Germany
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +37,57 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/razor-group-domain-security.yml
+- type: LLMsTxt
+  url: llms/razor-group-llms.txt
 - type: Website
+  url: https://www.razor-group.com/
+- type: Blog
+  url: https://www.razor-group.com/blog
+- type: GitHubOrganization
+  url: https://github.com/razor-group
+- type: PrivacyPolicy
+  url: https://www.razor-group.com/privacy-policy
+- type: Imprint
+  url: https://www.razor-group.com/imprint
+- type: Contact
+  url: https://www.razor-group.com/contact-us
+- type: About
+  url: https://www.razor-group.com/about-us
+- type: Careers
+  url: https://www.razor-group.com/careers
+- type: LinkedIn
+  url: https://de.linkedin.com/company/razor-brands
+- type: Twitter
+  url: https://mobile.twitter.com/razorgroup
+- type: SecondaryMarket
   url: https://forgeglobal.com/razor-group_stock/
+x-enrichment:
+  date: '2026-08-05'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    razor-group.com is a Webflow marketing site with no developer section of any kind,
+    and the only two API endpoints Razor operates are private — api.razor-group.com
+    resolves in DNS but refuses public TCP connections on 443 and 80, and the internal
+    "Ava" operator portal fronts an AWS API Gateway that answers
+    MissingAuthenticationToken to anonymous callers.
+  evidence:
+  - url: https://www.razor-group.com/openapi.json
+    status: 404
+  - url: https://www.razor-group.com/.well-known/agent-card.json
+    status: 404
+  - url: https://www.razor-group.com/llms.txt
+    status: 404
+  - url: https://portal.razor-group.com/api/health
+    status: 403
+  - url: https://api.razor-group.com/
+    status: 0
+  - url: https://api.github.com/orgs/razor-group/repos
+    status: 200
+  checked: '2026-08-05'
