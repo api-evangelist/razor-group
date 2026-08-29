@@ -12,6 +12,17 @@ description: 'Razor Group (Whele LLC) is a Berlin- and Boston-headquartered cons
   physical consumer products, not a software vendor: it publishes no public API, SDK,
   webhook surface or developer portal.'
 url: https://raw.githubusercontent.com/api-evangelist/razor-group/refs/heads/main/apis.yml
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 image: https://cdn.prod.website-files.com/659bd12259ec13f287424e42/659bd12259ec13f28742502c_razor%20logo-blu-01.svg
 x-type: company
 x-source: harvest:secondary-market
