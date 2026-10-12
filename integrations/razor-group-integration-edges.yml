@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/razor-group/integrations
+- https://n8n.io/integrations/razor-group/
+- https://composio.dev/toolkits/razor-group
+- https://monid.ai/tools/razor-group
+checked:
+- https://composio.dev/toolkits/razor-group
+- https://monid.ai/tools/razor-group
+- https://n8n.io/integrations/razor-group/
+- https://zapier.com/apps/razor-group/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
